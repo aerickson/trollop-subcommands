@@ -12,11 +12,11 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Adds a subcommand framework to the Optimist command line parsing library.}
   spec.description   = %q{Though Optimist has the ability to support subcommands, I find myself
 implementing the same logic repeatedly. The abstraction of this logic is
-now in trollop-subcommands. This provides a framework for parsing
+now in optimist-subcommands. This provides a framework for parsing
 command line options for ruby scripts that have subcommands. The format
 is 'script_name [global_options] subcommand [subcommand_options]'. The
 framework supports all the typical scenarios around these type of
-command line scripts. All that need to be specified are the trollop
+command line scripts. All that need to be specified are the optimist
 configurations for the global options and each subcommand options. See
 the readme for more information.}
   spec.homepage      = 'https://github.com/jwliechty/trollop-subcommands'
