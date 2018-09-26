@@ -85,4 +85,4 @@ The gem is available as open source under the terms of the [MIT License]
 
 [MIT License]: http://opensource.org/licenses/MIT
 [spec]:        spec/optimist/subcommands_spec.rb
-[Optimist]:     http://optimist.rubyforge.org/
+[Optimist]:    https://github.com/ManageIQ/optimist 
