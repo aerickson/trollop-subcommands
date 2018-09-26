@@ -15,7 +15,7 @@ and subcommands and you are good to go!
 
 ```ruby
 #!/usr/bin/env ruby
-require 'trollop/subcommands'
+require 'optimist/subcommands'
 
 # do not specify in the Optimist block `stop_on` or `stop_on_unknown`
 # as the subcommand framework will do that for you
@@ -77,7 +77,7 @@ See the scenarios covered by the [spec].
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
-https://github.com/jwliechty/trollop-subcommands.
+https://github.com/jwliechty/optimist-subcommands.
 
 ## License
 
@@ -85,4 +85,4 @@ The gem is available as open source under the terms of the [MIT License]
 
 [MIT License]: http://opensource.org/licenses/MIT
 [spec]:        spec/optimist/subcommands_spec.rb
-[Optimist]:     http://trollop.rubyforge.org/
+[Optimist]:     http://optimist.rubyforge.org/
