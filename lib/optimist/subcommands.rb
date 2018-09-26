@@ -1,7 +1,7 @@
-require 'trollop'
-require 'trollop/subcommands/version'
+require 'optimist'
+require 'optimist/subcommands/version'
 
-module Trollop
+module Optimist
   module Subcommands
 
     ## Register the options block for parsing the global options. If
@@ -60,7 +60,7 @@ module Trollop
         @global_parser ||= default_global_parser
         @global_parser.stop_on(subcommands)
         @global_parser.stop_on_unknown
-        Trollop::with_standard_exception_handling(@global_parser) do
+        Optimist::with_standard_exception_handling(@global_parser) do
           global_options = @global_parser.parse(args)
           cmd = parse_subcommand(args)
           cmd_options = parse_subcommand_options(args, cmd)
@@ -90,7 +90,7 @@ Options
       end
 
       def create_parser(&block)
-        ::Trollop::Parser.new(&block)
+        ::Optimist::Parser.new(&block)
       end
 
       def subcommands
@@ -99,15 +99,15 @@ Options
 
       def parse_subcommand(args)
         cmd = args.shift
-        raise ::Trollop::CommandlineError.new('No subcommand provided') unless cmd
+        raise ::Optimist::CommandlineError.new('No subcommand provided') unless cmd
         cmd
       end
 
       def parse_subcommand_options(args, cmd)
         block = @subcommand_parsers_lookup[cmd]
-        raise ::Trollop::CommandlineError.new("Unknown subcommand '#{cmd}'") unless block
-        cmd_parser = ::Trollop::Parser.new(&block)
-        ::Trollop::with_standard_exception_handling(cmd_parser) do
+        raise ::Optimist::CommandlineError.new("Unknown subcommand '#{cmd}'") unless block
+        cmd_parser = ::Optimist::Parser.new(&block)
+        ::Optimist::with_standard_exception_handling(cmd_parser) do
           begin
           result = cmd_parser.parse(args)
           rescue CommandlineError => e

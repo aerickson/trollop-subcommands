@@ -127,10 +127,10 @@ shared_examples 'a subcommand parser' do
   end
 end
 
-describe Trollop::Subcommands do
+describe Optimist::Subcommands do
 
   it 'has a version number' do
-    expect(Trollop::Subcommands::VERSION).not_to be nil
+    expect(Optimist::Subcommands::VERSION).not_to be nil
   end
 
   describe '::parse!' do

@@ -5,12 +5,12 @@ require 'trollop/subcommands/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'trollop-subcommands'
-  spec.version       = Trollop::Subcommands::VERSION
+  spec.version       = Optimist::Subcommands::VERSION
   spec.authors       = ['Jason Liechty']
   spec.email         = ['jason.liechty@indigobio.com']
 
-  spec.summary       = %q{Adds a subcommand framework to the Trollop command line parsing library.}
-  spec.description   = %q{Though Trollop has the ability to support subcommands, I find myself
+  spec.summary       = %q{Adds a subcommand framework to the Optimist command line parsing library.}
+  spec.description   = %q{Though Optimist has the ability to support subcommands, I find myself
 implementing the same logic repeatedly. The abstraction of this logic is
 now in trollop-subcommands. This provides a framework for parsing
 command line options for ruby scripts that have subcommands. The format

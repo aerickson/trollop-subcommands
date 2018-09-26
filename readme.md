@@ -1,6 +1,6 @@
-# Trollop::Subcommands
+# Optimist::Subcommands
 
-This gem is an extension to [Trollop]. It provides a framework for commandline
+This gem is an extension to [Optimist]. It provides a framework for commandline
 scripts that use the following subcommand pattern
 
 ```bash
@@ -9,17 +9,17 @@ my_script [global options] command [command options]
 
 ## Usage
 
-The framework abstracts setting up the Trollop parser to the sub command pattern
-displayed above. Just provide the Trollop options blocks for the global options
+The framework abstracts setting up the Optimist parser to the sub command pattern
+displayed above. Just provide the Optimist options blocks for the global options
 and subcommands and you are good to go!
 
 ```ruby
 #!/usr/bin/env ruby
 require 'trollop/subcommands'
 
-# do not specify in the Trollop block `stop_on` or `stop_on_unknown`
+# do not specify in the Optimist block `stop_on` or `stop_on_unknown`
 # as the subcommand framework will do that for you
-Trollop::Subcommands::register_global do
+Optimist::Subcommands::register_global do
   banner <<-END
 Usage
   my_script [global options] COMMAND [command options]
@@ -36,7 +36,7 @@ Options
   opt :some_global_option, 'Some global option', type: :string, short: :none
 end
 
-Trollop::Subcommands::register_subcommand('list') do
+Optimist::Subcommands::register_subcommand('list') do
   banner <<-END
 Usage
   #{File.basename($0)} list [options]
@@ -48,7 +48,7 @@ Options
   opt :all, 'All the things', type: :boolean
 end
 
-Trollop::Subcommands::register_subcommand('create') do
+Optimist::Subcommands::register_subcommand('create') do
   banner <<-END
 Usage
   #{File.basename($0)} create [options]
@@ -61,7 +61,7 @@ Options
   opt :name,    'blah blah', type: :string
 end
 
-result = Trollop::Subcommands::parse!
+result = Optimist::Subcommands::parse!
 
 
 puts "Command was #{result.subcommand}"
@@ -84,5 +84,5 @@ https://github.com/jwliechty/trollop-subcommands.
 The gem is available as open source under the terms of the [MIT License]
 
 [MIT License]: http://opensource.org/licenses/MIT
-[spec]:        spec/trollop/subcommands_spec.rb
-[Trollop]:     http://trollop.rubyforge.org/
+[spec]:        spec/optimist/subcommands_spec.rb
+[Optimist]:     http://trollop.rubyforge.org/
