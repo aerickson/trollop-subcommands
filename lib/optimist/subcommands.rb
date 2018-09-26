@@ -9,8 +9,8 @@ module Optimist
     ## message will be used. No need to specify `stop_on` or
     ## `stop_on_unknown` as that is done automatically at the time of
     ## parsing.
-    def register_global(&trollop_block)
-      parser.register_global(&trollop_block)
+    def register_global(&optimist_block)
+      parser.register_global(&optimist_block)
     end
 
     ## Register the options block for a given subcommand. If the
@@ -18,8 +18,8 @@ module Optimist
     ## provided specifying the banner. The banner displays when
     ## the when the followng arguments are given:
     ##   my_script my_subcommand -h
-    def register_subcommand(command, &trollop_block)
-      parser.register_subcommand(command, &trollop_block)
+    def register_subcommand(command, &optimist_block)
+      parser.register_subcommand(command, &optimist_block)
     end
 
     ## Where the magic happens. Once all the subcommands and optionally
@@ -48,12 +48,12 @@ module Optimist
         @subcommand_parsers_lookup = {}
       end
 
-      def register_global(&trollop_block)
-        @global_parser = create_parser(&trollop_block)
+      def register_global(&optimist_block)
+        @global_parser = create_parser(&optimist_block)
       end
 
-      def register_subcommand(command, &trollop_block)
-        @subcommand_parsers_lookup[command.to_s] = trollop_block
+      def register_subcommand(command, &optimist_block)
+        @subcommand_parsers_lookup[command.to_s] = optimist_block
       end
 
       def parse!(args=ARGV)
