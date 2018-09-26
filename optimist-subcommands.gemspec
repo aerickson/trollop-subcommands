@@ -1,10 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'trollop/subcommands/version'
+require 'optimist/subcommands/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'trollop-subcommands'
+  spec.name          = 'optimist-subcommands'
   spec.version       = Optimist::Subcommands::VERSION
   spec.authors       = ['Jason Liechty']
   spec.email         = ['jason.liechty@indigobio.com']
@@ -30,5 +30,5 @@ the readme for more information.}
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.3'
 
-  spec.add_dependency 'trollop', '~> 2.1'
+  spec.add_dependency 'optimist', '~> 3.0'
 end
